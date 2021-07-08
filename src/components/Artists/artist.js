@@ -141,7 +141,7 @@ const Artist = () => {
   return (
     <ContainerDiv>
       <AuthorText>{id}</AuthorText>
-      <img src={currentImg} width="75%" />
+      <img src={currentImg} alt="currentImg" width="75%" />
       <DetailText>{currentDetail}</DetailText>
       <ArrowDiv>
         <div
@@ -160,7 +160,7 @@ const Artist = () => {
       <ThumbImgDiv>
         {data.map((item, key) => (
           <ThumbItem onClick={() => handleThumbClick(key)} key={key}>
-            <img key={key} src={item.thumbImg} />
+            <img key={key} alt="thumbImg" src={item.thumbImg} />
           </ThumbItem>
         ))}
       </ThumbImgDiv>
