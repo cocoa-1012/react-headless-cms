@@ -1,4 +1,5 @@
 import React from "react";
+import { ContainerHomeDiv, DetailInfoDiv, HomeImg } from "./subPageStyle";
 
 const data = [
   {
@@ -28,36 +29,13 @@ const Home = () => {
   return (
     <>
       {data.map((item, key) => (
-        <div
-          key={key}
-          style={{
-            display: "block",
-            position: "relative",
-            justifyContent: "Right",
-            alignItems: "Right",
-            maxWidth: 960,
-            margin: "auto",
-            paddingBottom: 15,
-          }}
-        >
-          <a href="/">
-            <img
-              width="1000"
-              height="444"
-              src={item.imgUrl}
-              alt=""
-              sizes="(max-width: 1000px) 100vw, 1000px"
-            />
-          </a>
-          <div
-            style={{
-              position: "absolute",
-              bottom: 0,
-              backgroundColor: "white",
-              right: -20,
-              padding: "5px 25px",
-            }}
-          >
+        <ContainerHomeDiv key={key}>
+          <HomeImg
+            src={item.imgUrl}
+            alt=""
+            sizes="(max-width: 1000px) 100vw, 1000px"
+          />
+          <DetailInfoDiv>
             <h2>
               <a href="/" style={{ textDecoration: "none" }}>
                 {item.author}
@@ -66,8 +44,8 @@ const Home = () => {
             <h4 className="subtitle_head">{item.title}</h4>
             <p></p>
             <p>{item.duration}</p>
-          </div>
-        </div>
+          </DetailInfoDiv>
+        </ContainerHomeDiv>
       ))}
     </>
   );

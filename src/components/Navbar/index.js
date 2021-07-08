@@ -14,14 +14,14 @@ import {
 } from "./NavbarElements";
 
 const options1 = [
-  "Laylah Ali",
-  "Joaquin Boz",
-  "Jingze Du",
-  "Hannah Epstein",
-  "Kazuhito Kawai",
-  "Jon Key",
-  "Kate Klingbeil",
-  "Luciana Lamothe",
+  "Lita Albuquerque",
+  // "Joaquin Boz",
+  // "Jingze Du",
+  // "Hannah Epstein",
+  // "Kazuhito Kawai",
+  // "Jon Key",
+  // "Kate Klingbeil",
+  // "Luciana Lamothe",
 ];
 const options2 = ["Future", "Current"];
 
@@ -63,7 +63,7 @@ const Navbar = () => {
         <Nav>
           <NavLink to="/">
             <ImgLogo>
-              <img src={logoImg} alt="Steve Turner" />
+              <img src={logoImg} alt="Bond Street" />
             </ImgLogo>
           </NavLink>
 
@@ -72,14 +72,14 @@ const Navbar = () => {
               onMouseOver={handleMouseOver1}
               onMouseLeave={handleMouseLeave1}
             >
-              <NavLink to="/" onClick={onNavLinkClicked}>
+              <NavLink to="/artists" onClick={onNavLinkClicked}>
                 Artists
               </NavLink>
               {artistIsOpen && (
                 <DropDownListContainer>
                   <DropDownList>
-                    {options1.map((option) => (
-                      <ListItem>
+                    {options1.map((option, key) => (
+                      <ListItem key={key}>
                         <SubLink to={`/artists/${option}`}>{option}</SubLink>
                       </ListItem>
                     ))}
@@ -91,7 +91,7 @@ const Navbar = () => {
               onMouseOver={handleMouseOver2}
               onMouseLeave={handleMouseLeave2}
             >
-              <NavLink to="/" onClick={onNavLinkClicked}>
+              <NavLink to="/exhibitions" onClick={onNavLinkClicked}>
                 Exhibitions
               </NavLink>
               {exhibitionIsOpen && (
@@ -111,8 +111,8 @@ const Navbar = () => {
                 </DropDownListContainer>
               )}
             </DropDownContainer>
-            <NavLink to="/">GallaryVault</NavLink>
-            <NavLink to="/">Info</NavLink>
+            <NavLink to="/gallaryVault">GallaryVault</NavLink>
+            <NavLink to="/info">Info</NavLink>
           </NavMenu>
         </Nav>
       </NavContainer>

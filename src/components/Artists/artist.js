@@ -7,7 +7,6 @@ export const ContainerDiv = styled.div`
   align-items: center;
   max-width: 960px;
   @media screen and (max-width: 768px) {
-    display: none;
   }
 `;
 
