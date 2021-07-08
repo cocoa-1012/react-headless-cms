@@ -70,20 +70,20 @@ const Artist = () => {
         >
           <div style={{ marginRight: 350 }}>
             <DetailText>
-              <a href="#" style={{ textDecoration: "none" }}>
+              <a href="/" style={{ textDecoration: "none" }}>
                 {item.author}
               </a>
             </DetailText>
             <DetailText className="subtitle_head">{item.title}</DetailText>
             <p></p>
             <DetailText>{item.duration}</DetailText>
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="/" style={{ textDecoration: "none" }}>
               <DetailText style={{ color: "#d12a2f" }}>
                 Read more&nbsp;&nbsp; &rarr;{" "}
               </DetailText>
             </a>
           </div>
-          <a href="#">
+          <a href="/">
             <img
               width="450"
               height="200"
