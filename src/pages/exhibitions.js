@@ -10,7 +10,7 @@ const Exhibitions = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "Right",
-        height: "100vh",
+        height: "80vh",
       }}
     >
       <Switch>

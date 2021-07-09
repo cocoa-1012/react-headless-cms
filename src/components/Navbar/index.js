@@ -43,11 +43,6 @@ const Navbar = () => {
     setExhibitionIsOpen(false);
   };
 
-  // const onOptionClicked = (value) => () => {
-  //   console.log("clicked");
-  //   setArtistIsOpen(true);
-  //   setExhibitionIsOpen(true);
-  // };
   return (
     <>
       <NavContainer>
@@ -90,7 +85,7 @@ const Navbar = () => {
               onTouchStart={handleMouseOver2}
               onMouseLeave={handleMouseLeave2}
             >
-              <NavLink to="/artists" onClick={onNavLinkClicked}>
+              <NavLink to="/exhibitions" onClick={onNavLinkClicked}>
                 Exhibitions
               </NavLink>
               {exhibitionIsOpen && (
