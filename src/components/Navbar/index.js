@@ -13,16 +13,7 @@ import {
   SubLink,
 } from "./NavbarElements";
 
-const options1 = [
-  "Lita Albuquerque",
-  // "Joaquin Boz",
-  // "Jingze Du",
-  // "Hannah Epstein",
-  // "Kazuhito Kawai",
-  // "Jon Key",
-  // "Kate Klingbeil",
-  // "Luciana Lamothe",
-];
+const options1 = ["Lita Albuquerque"];
 const options2 = ["Future", "Current"];
 
 const Navbar = () => {
@@ -52,11 +43,11 @@ const Navbar = () => {
     setExhibitionIsOpen(false);
   };
 
-  const onOptionClicked = (value) => () => {
-    console.log("clicked");
-    setArtistIsOpen(true);
-    setExhibitionIsOpen(true);
-  };
+  // const onOptionClicked = (value) => () => {
+  //   console.log("clicked");
+  //   setArtistIsOpen(true);
+  //   setExhibitionIsOpen(true);
+  // };
   return (
     <>
       <NavContainer>
@@ -70,6 +61,7 @@ const Navbar = () => {
           <NavMenu>
             <DropDownContainer
               onMouseOver={handleMouseOver1}
+              onTouchStart={handleMouseOver1}
               onMouseLeave={handleMouseLeave1}
             >
               <NavLink to="/artists" onClick={onNavLinkClicked}>
@@ -80,29 +72,36 @@ const Navbar = () => {
                   <DropDownList>
                     {options1.map((option, key) => (
                       <ListItem key={key}>
-                        <SubLink to={`/artists/${option}`}>{option}</SubLink>
+                        <SubLink
+                          to={`/artists/${option}`}
+                          onClick={onNavLinkClicked}
+                        >
+                          {option}
+                        </SubLink>
                       </ListItem>
                     ))}
                   </DropDownList>
                 </DropDownListContainer>
               )}
             </DropDownContainer>
+
             <DropDownContainer
               onMouseOver={handleMouseOver2}
+              onTouchStart={handleMouseOver2}
               onMouseLeave={handleMouseLeave2}
             >
-              <NavLink to="/exhibitions" onClick={onNavLinkClicked}>
+              <NavLink to="/artists" onClick={onNavLinkClicked}>
                 Exhibitions
               </NavLink>
               {exhibitionIsOpen && (
                 <DropDownListContainer>
                   <DropDownList>
-                    {options2.map((option) => (
-                      <ListItem
-                        onClick={onOptionClicked(option)}
-                        key={Math.random()}
-                      >
-                        <SubLink to={`/exhibitions/${option}`}>
+                    {options2.map((option, key) => (
+                      <ListItem key={key}>
+                        <SubLink
+                          to={`/exhibitions/${option}`}
+                          onClick={onNavLinkClicked}
+                        >
                           {option}
                         </SubLink>
                       </ListItem>

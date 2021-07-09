@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const ContainerDiv = styled.div`
   display: block;
+  width: 85%;
   align-items: center;
   max-width: 960px;
   @media screen and (max-width: 768px) {
@@ -27,8 +28,33 @@ export const DetailText = styled.div`
   font-weight: 400;
   margin: 10px 0 !important;
   max-width: 960px;
+  @media screen and (max-width: 768px) {
+    line-height: 1em;
+    margin: 2px 5px !important;
+  }
 `;
 
+export const ExhImg = styled.img`
+  width: 65%;
+  cursor: pointer;
+  margin: 15px 0px 10px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const ItemDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`;
+
+export const DetailDiv = styled.div``;
 const data = [
   {
     imgUrl: "../../assets/images/home/home-1 - Lean-On-Me_Install-22.jpg",
@@ -50,24 +76,15 @@ const data = [
   },
 ];
 
-const Artist = () => {
+const Exhibition = () => {
   const { id } = useParams();
 
   return (
     <ContainerDiv>
       <TitleText>{id} exhibition</TitleText>
       {data.map((item, key) => (
-        <div
-          key={key}
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            maxWidth: 960,
-            marginBottom: 20,
-          }}
-        >
-          <div style={{ marginRight: 350 }}>
+        <ItemDiv key={key}>
+          <DetailDiv>
             <DetailText>
               <a href="/" style={{ textDecoration: "none" }}>
                 {item.author}
@@ -81,20 +98,16 @@ const Artist = () => {
                 Read more&nbsp;&nbsp; &rarr;{" "}
               </DetailText>
             </a>
-          </div>
-          <a href="/">
-            <img
-              width="450"
-              height="200"
-              src={item.imgUrl}
-              alt=""
-              sizes="(max-width: 1000px) 100vw, 1000px"
-            />
-          </a>
-        </div>
+          </DetailDiv>
+          <ExhImg
+            src={item.imgUrl}
+            alt=""
+            sizes="(max-width: 1000px) 100vw, 1000px"
+          />
+        </ItemDiv>
       ))}
     </ContainerDiv>
   );
 };
 
-export default Artist;
+export default Exhibition;

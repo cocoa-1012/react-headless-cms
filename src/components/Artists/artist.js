@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
 export const ContainerDiv = styled.div`
+  padding: 10px 50px;
   display: block;
   align-items: center;
   max-width: 960px;
   @media screen and (max-width: 768px) {
+    padding: 0px 10px;
   }
 `;
 

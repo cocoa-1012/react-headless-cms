@@ -49,8 +49,8 @@ export const NavLink = styled(Link)`
   }
   @media screen and (max-width: 768px) {
     width: fit-content;
-    margin-bottom: 5px;
-    margin-top: 10px;
+    margin-bottom: 0px;
+    margin-top: 5px;
   }
 `;
 
@@ -59,6 +59,7 @@ export const NavMenu = styled.div`
   align-items: center;
   margin-right: 24px;
   @media screen and (max-width: 768px) {
+    margin-left: 15px;
   }
 `;
 
@@ -75,6 +76,8 @@ export const ImgLogo = styled.nav`
   @media screen and (max-width: 768px) {
     img {
       max-height: 25px;
+      margin-top: 10px;
+      margin-left: 15px;
     }
   }
 `;
@@ -109,6 +112,9 @@ export const DropDownList = styled("ul")`
     color: #d12a2f;
   }
   width: 160px;
+  @media screen and (max-width: 768px) {
+    margin-top: 10px;
+  }
 `;
 
 export const ListItem = styled.nav`
