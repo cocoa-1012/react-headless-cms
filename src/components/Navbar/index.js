@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import FocusLock from "react-focus-lock";
 import logoImg from "../../assets/images/logo/logo.png";
+import Burger from "../Burger/index";
+import Menu from "../Menu/index";
 import {
   DropDownContainer,
   DropDownList,
   DropDownListContainer,
+  GeneralDiv,
   ImgLogo,
   ListItem,
   Nav,
@@ -19,6 +23,10 @@ const options2 = ["Future", "Current"];
 const Navbar = () => {
   const [artistIsOpen, setArtistIsOpen] = useState(false);
   const [exhibitionIsOpen, setExhibitionIsOpen] = useState(false);
+
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
 
   const handleMouseOver1 = () => {
     setArtistIsOpen(true);
@@ -108,6 +116,13 @@ const Navbar = () => {
             <NavLink to="/gallaryVault">GallaryVault</NavLink>
             <NavLink to="/info">Info</NavLink>
           </NavMenu>
+
+          <GeneralDiv ref={node}>
+            <FocusLock disabled={!open}>
+              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+              <Menu open={open} setOpen={setOpen} id={menuId} />
+            </FocusLock>
+          </GeneralDiv>
         </Nav>
       </NavContainer>
     </>

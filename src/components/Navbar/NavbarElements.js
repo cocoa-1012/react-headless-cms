@@ -59,6 +59,7 @@ export const NavMenu = styled.div`
   align-items: center;
   margin-right: 24px;
   @media screen and (max-width: 768px) {
+    display: none;
     margin-left: 15px;
   }
 `;
@@ -69,13 +70,17 @@ export const ImgLogo = styled.nav`
   margin-right: 24px;
   cursor: pointer;
   img {
+    align-items: right;
     width: auto;
     max-height: 35px;
   }
 
   @media screen and (max-width: 768px) {
+    position: absolute;
+    top: 5px;
+    right: 0px;
     img {
-      max-height: 25px;
+      max-height: 35px;
       margin-top: 10px;
       margin-left: 15px;
     }
@@ -86,6 +91,13 @@ export const Main = styled("div")`
   font-family: sans-serif;
   background: #f0f0f0;
   height: 100vh;
+`;
+
+export const GeneralDiv = styled("div")`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 export const DropDownContainer = styled("div")`
