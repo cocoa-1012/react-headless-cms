@@ -24,14 +24,6 @@ const Menu = ({ open, ...props }) => {
     setExhibitionIsOpen(false);
   };
 
-  const handleMouseLeave1 = () => {
-    setArtistIsOpen(false);
-  };
-
-  const handleMouseLeave2 = () => {
-    setExhibitionIsOpen(false);
-  };
-
   const handleMouseOver2 = () => {
     setArtistIsOpen(false);
     setExhibitionIsOpen(!exhibitionIsOpen);
