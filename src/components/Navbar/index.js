@@ -2,52 +2,54 @@ import React, { useRef, useState } from "react";
 import FocusLock from "react-focus-lock";
 import logoImg from "../../assets/images/logo/logo.png";
 import Burger from "../Burger/index";
+import Menu from "../Menu/index";
 import {
-  // DropDownContainer,
-  // DropDownList,
-  // DropDownListContainer,
+  DropDownContainer,
+  DropDownList,
+  DropDownListContainer,
   GeneralDiv,
   ImgLogo,
-  // ListItem,
+  ListItem,
   Nav,
   NavContainer,
   NavLink,
   NavMenu,
+  SubLink,
 } from "./NavbarElements";
 
-// const options1 = ["Lita Albuquerque"];
-// const options2 = ["Future", "Current"];
+const options1 = ["Lita Albuquerque"];
+const options2 = ["Future", "Current"];
 
 const Navbar = () => {
-  // const [artistIsOpen, setArtistIsOpen] = useState(false);
-  // const [exhibitionIsOpen, setExhibitionIsOpen] = useState(false);
+  const [artistIsOpen, setArtistIsOpen] = useState(false);
+  const [exhibitionIsOpen, setExhibitionIsOpen] = useState(false);
 
   const [open, setOpen] = useState(false);
   const node = useRef();
   const menuId = "main-menu";
 
-  // const handleMouseOver1 = () => {
-  //   setArtistIsOpen(true);
-  //   setExhibitionIsOpen(false);
-  // };
+  const handleMouseOver1 = () => {
+    setArtistIsOpen(true);
+    setExhibitionIsOpen(false);
+  };
 
-  // const handleMouseLeave1 = () => {
-  //   setArtistIsOpen(false);
-  // };
+  const handleMouseLeave1 = () => {
+    setArtistIsOpen(false);
+  };
 
-  // const handleMouseLeave2 = () => {
-  //   setExhibitionIsOpen(false);
-  // };
+  const handleMouseLeave2 = () => {
+    setExhibitionIsOpen(false);
+  };
 
-  // const handleMouseOver2 = () => {
-  //   setArtistIsOpen(false);
-  //   setExhibitionIsOpen(true);
-  // };
+  const handleMouseOver2 = () => {
+    setArtistIsOpen(false);
+    setExhibitionIsOpen(true);
+  };
 
-  // const onNavLinkClicked = () => {
-  //   setArtistIsOpen(false);
-  //   setExhibitionIsOpen(false);
-  // };
+  const onNavLinkClicked = () => {
+    setArtistIsOpen(false);
+    setExhibitionIsOpen(false);
+  };
 
   return (
     <>
@@ -60,7 +62,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavMenu>
-            {/* <DropDownContainer
+            <DropDownContainer
               onMouseOver={handleMouseOver1}
               onTouchStart={handleMouseOver1}
               onMouseLeave={handleMouseLeave1}
@@ -112,13 +114,13 @@ const Navbar = () => {
               )}
             </DropDownContainer>
             <NavLink to="/gallaryVault">GallaryVault</NavLink>
-            <NavLink to="/info">Info</NavLink> */}
+            <NavLink to="/info">Info</NavLink>
           </NavMenu>
 
           <GeneralDiv ref={node}>
             <FocusLock disabled={!open}>
               <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-              {/* <Menu open={open} setOpen={setOpen} id={menuId} /> */}
+              <Menu open={open} setOpen={setOpen} id={menuId} />
             </FocusLock>
           </GeneralDiv>
         </Nav>
