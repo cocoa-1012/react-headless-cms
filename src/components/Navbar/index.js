@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import FocusLock from "react-focus-lock";
-import logoImg from "../../assets/images/logo/logo.png";
 // import Burger from "../Burger/index";
 // import Menu from "../Menu/index";
 import {
@@ -56,7 +55,8 @@ const Navbar = () => {
         <Nav>
           <NavLink to="/">
             <ImgLogo>
-              <img src={logoImg} alt="Bond Street" />
+              {/* <img src={logoImg} alt="Bond Street" /> */}
+              <p>ttt ttt</p>
             </ImgLogo>
           </NavLink>
 
