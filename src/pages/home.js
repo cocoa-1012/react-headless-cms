@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerHomeDiv } from "./subPageStyle";
+import { ContainerHomeDiv, DetailInfoDiv, HomeImg } from "./subPageStyle";
 
 const data = [
   {
@@ -30,7 +30,7 @@ const Home = () => {
     <>
       {data.map((item, key) => (
         <ContainerHomeDiv key={key}>
-          {/* <HomeImg
+          <HomeImg
             src={item.imgUrl}
             alt=""
             sizes="(max-width: 1000px) 100vw, 1000px"
@@ -44,7 +44,7 @@ const Home = () => {
             <h4 className="subtitle_head">{item.title}</h4>
             <p></p>
             <p>{item.duration}</p>
-          </DetailInfoDiv> */}
+          </DetailInfoDiv>
         </ContainerHomeDiv>
       ))}
     </>
