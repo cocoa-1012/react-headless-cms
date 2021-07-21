@@ -1,20 +1,14 @@
 import React, { useRef, useState } from "react";
 import FocusLock from "react-focus-lock";
-import logoImg from "../../assets/images/logo/logo.png";
-import Burger from "../Burger/index";
-import Menu from "../Menu/index";
+// import Burger from "../Burger/index";
+// import Menu from "../Menu/index";
 import {
-  DropDownContainer,
-  DropDownList,
-  DropDownListContainer,
   GeneralDiv,
   ImgLogo,
-  ListItem,
   Nav,
   NavContainer,
   NavLink,
   NavMenu,
-  SubLink,
 } from "./NavbarElements";
 
 const options1 = ["Lita Albuquerque"];
@@ -57,13 +51,13 @@ const Navbar = () => {
         <Nav>
           <NavLink to="/">
             <ImgLogo>
-              <img src={logoImg} alt="Bond Street" />
-              {/* <p>ttt ttt</p> */}
+              {/* <img src={logoImg} alt="Bond Street" /> */}
+              <p>let's test</p>
             </ImgLogo>
           </NavLink>
 
           <NavMenu>
-            <DropDownContainer
+            {/* <DropDownContainer
               onMouseOver={handleMouseOver1}
               onTouchStart={handleMouseOver1}
               onMouseLeave={handleMouseLeave1}
@@ -115,13 +109,13 @@ const Navbar = () => {
               )}
             </DropDownContainer>
             <NavLink to="/gallaryVault">GallaryVault</NavLink>
-            <NavLink to="/info">Info</NavLink>
+            <NavLink to="/info">Info</NavLink> */}
           </NavMenu>
 
           <GeneralDiv ref={node}>
             <FocusLock disabled={!open}>
-              <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
-              <Menu open={open} setOpen={setOpen} id={menuId} />
+              {/* <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
+              <Menu open={open} setOpen={setOpen} id={menuId} /> */}
             </FocusLock>
           </GeneralDiv>
         </Nav>
